@@ -91,7 +91,7 @@ So `git checkout` is the command. `-b` is the option to create a branch. `worksh
 
 You're on your branch, and now need to commit some code.
 
-`git add .` ? Risky, if not overly disciplined
+`git add .` ? Risky, if not overly disciplined.
 
 or
 
@@ -129,8 +129,76 @@ So `git push` is the command. `origin` is location of the server we want to push
 
 ## Rebasing
 
+So you now commit all day long, but at the end of the day, you want to make [logically atomic commits](https://benmatselby.dev/post/logical-commits/). This means you need to learn rebasing.
+
+I always think of rebasing as "replying your work over the top of the latest code".
+
+But you can also do much more with an "interactive rebase".
+
+Normal rebase:
+
+`git rebase origin/main`
+
+Interactive rebase:
+
+`git rebase -i origin/main`
+
+Interactive rebase provides you a menu of options, such as squashing, picking, editing, dropping.
+
 ## Configuration (Global and repo level)
+
+`git config --list` will show you all your configuration items.
+
+You can break that down
+
+`git config --list --local`
+`git config --list --global`
+
+So to add config
+
+`git config --add user.email engineer@gmail.com`
+
+This sets configuration locally to the repo you are in, and overrides global configuration.
+
+To unset configuration
+
+`git config --unset-all user.email`
+
+Or to add configuration globally
+
+`git config --global --add user.email engineer@gmail.com`
+
+You can also edit `~/.gitconfig` for global configuration, and `.git/config` for the local repo configuration.
+
+Let's say you want to have version controlled git configuration, but you need different email addresses (e.g. one for work, one for home), you can set
+
+```ini
+[include]
+  path = ~/.gitconfig.local
+```
+
+```shell
+❯ cat ~/.gitconfig.local
+[user]
+    name = Ben Selby
+    email = engineer@gmail.com
+```
 
 ## Logging
 
+Logging is what it is, bit here are some useful ones
+
+- `git log` - Show the log.
+- `git log --stat` - Shows the log and the files changed.
+- `git log --stat -p` - Shows the log and the files changed, and the diff!
+- `git log --graph` - Shows the log and graphs how the commits came in.
+- `git log --oneline --decorate` - Shows the title of the commits, and curates tags/branches. This is why useful git commits are important.
+- `git shortlog` - Commits by engineer.
+- `git shortlog -ns` - Commit totals by engineer, in order.
+
 ## Hooks
+
+## Tidbits
+
+- `master` is being moved away from. If you `git init` a new repo now, git explains this. GitHub is also moving away from `master` in favour of `main`.
+- `git init` creates a new repo.
