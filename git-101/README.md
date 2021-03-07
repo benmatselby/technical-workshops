@@ -99,6 +99,12 @@ or
 
 This adds files to the "index".
 
+How do you know what to commit?
+
+- `git diff` shows you want is not in the index, that has changed.
+- `git diff --cached` shows you want has changed, and is in the index, ready to commit.
+- `git diff` shows you the diff, without whitespace changes.
+
 `git status`
 
 This shows you what is and is not in the index, and what will be committed.
@@ -198,7 +204,20 @@ Logging is what it is, bit here are some useful ones
 
 ## Hooks
 
+The [book](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).
+
+Note that there are server and client side hooks. If you maintain your own git server, you can have both. If you use GitHub, you have "GitHub Actions" as the server hooks.
+
+Normally, we deal with local hooks, which are stored in `.git/hooks`.
+
+The files:
+
+- Need to have a shebang line.
+- Need to have the correct permissions.
+
 ## Tidbits
 
 - `master` is being moved away from. If you `git init` a new repo now, git explains this. GitHub is also moving away from `master` in favour of `main`.
 - `git init` creates a new repo.
+- `git show [commit]` will show you the contents of the commit.
+- `git ls-files` will give you a list of files in git.
