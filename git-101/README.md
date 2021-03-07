@@ -65,6 +65,7 @@ Benefits, you can work on a train and commit code. You do not need an internet c
 `git fetch origin`
 
 This pulls the latest information from the `origin` remote. Which mainly for EMIS Engineers is currently GitHub.
+
 But,
 
 `git fetch github`
@@ -86,12 +87,50 @@ You have a clone, you have the code, now you want to change it.
 
 So `git checkout` is the command. `-b` is the option to create a branch. `workshop` is the name of the new branch. `origin/main` is what I am branching from. It can be from any remote, or even locally.
 
+## Committing
+
+You're on your branch, and now need to commit some code.
+
+`git add .` ? Risky, if not overly disciplined
+
+or
+
+`git add [file] [file]` Better
+
+This adds files to the "index".
+
+`git status`
+
+This shows you what is and is not in the index, and what will be committed.
+
+`git commit -a` ? Risky, if not overly disciplined.
+
+or
+
+`git commit`
+
+Other options:
+
+- `git commit -n` Very naughty. The `-n` means naughty ;-)
+- `git commit -m "This is my commit message"`
+
+Soap box:
+
+- [Logically atomic commits](https://benmatselby.dev/post/logical-commits/)
+- Please be liberal in information in your commit history. It's the only thing that stays with us.
+
 ## Pushing
 
+Committing code, does not make it available for everyone, since git is distributed. So, we need to push the changes
+
+`git push origin workshop`
+
+So `git push` is the command. `origin` is location of the server we want to push to. `workshop` is the branch I am pushing to.
+
 ## Rebasing
+
+## Configuration (Global and repo level)
 
 ## Logging
 
 ## Hooks
-
-## Configuration (Global and repo level)
