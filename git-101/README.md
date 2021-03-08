@@ -123,7 +123,7 @@ Other options:
 Soap box:
 
 - [Logically atomic commits](https://benmatselby.dev/post/logical-commits/)
-- Please be liberal in information in your commit history. It's the only thing that stays with us.
+- Please be liberal in information in your commit history. It's the only thing that stays with us. [Example here.](https://github.com/emisgroup/jenkins-infrastructure/commit/42b3c3f02472a8feb7e9fbe8da93ebbafbdc6953)
 
 ## Pushing
 
@@ -221,5 +221,3 @@ The files:
 - `git init` creates a new repo.
 - `git show [commit]` will show you the contents of the commit.
 - `git ls-files` will give you a list of files in git.
-- `git checkout [remote]/[branch] -- [file]` - This will checkout a single file from any branch. Maybe you need `origin/master` or a colleagues version of a file.
-- `git cherrypick [commit]` - Picks the commit from any given branch into your local index. Handy for sharing unmerged code, but better to merge the code.
