@@ -222,3 +222,4 @@ The files:
 - `git show [commit]` will show you the contents of the commit.
 - `git ls-files` will give you a list of files in git.
 - `git reset --soft HEAD~1` will undo the last commit from your local history.
+- `git checkout origin/main -- README.md` will checkout `README.md` by itself from the `origin/main` branch.
