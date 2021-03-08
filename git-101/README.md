@@ -221,3 +221,4 @@ The files:
 - `git init` creates a new repo.
 - `git show [commit]` will show you the contents of the commit.
 - `git ls-files` will give you a list of files in git.
+- `git reset --soft HEAD~1` will undo the last commit from your local history.
