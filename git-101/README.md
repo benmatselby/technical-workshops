@@ -157,8 +157,8 @@ Interactive rebase provides you a menu of options, such as squashing, picking, e
 
 You can break that down
 
-`git config --list --local`
-`git config --list --global`
+- `git config --list --local`
+- `git config --list --global`
 
 So to add config
 
