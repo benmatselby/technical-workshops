@@ -11,5 +11,5 @@ This repo houses content for Technical Workshops.
 | [Jenkins application overview](https://github.com/benmatselby/technical-workshops/tree/main/jenkins-application-overview)      | 11-01-2021 | 26         |
 | [Operational](https://github.com/benmatselby/technical-workshops/tree/main/operational)                                        | 18-01-2021 | 39         |
 | [Release process](https://github.com/benmatselby/technical-workshops/tree/main/release-process)                                | 25-01-2021 | 35         |
-| [Terraform]()                                                                                                                  | 01-03-2021 | 43         |
+| [Terraform](https://github.com/benmatselby/technical-workshops/tree/main/terraform)                                            | 01-03-2021 | 43         |
 | [Vulnerability scanning with Trivy](https://github.com/benmatselby/technical-workshops/tree/main/vulverability-scanning-trivy) | 22-02-2021 | 28         |
