@@ -221,3 +221,5 @@ The files:
 - `git init` creates a new repo.
 - `git show [commit]` will show you the contents of the commit.
 - `git ls-files` will give you a list of files in git.
+- `git checkout [remote]/[branch] -- [file]` - This will checkout a single file from any branch. Maybe you need `origin/master` or a colleagues version of a file.
+- `git cherrypick [commit]` - Picks the commit from any given branch into your local index. Handy for sharing unmerged code, but better to merge the code.
