@@ -13,3 +13,4 @@ This repo houses content for Technical Workshops.
 | [Release process](https://github.com/benmatselby/technical-workshops/tree/main/release-process)                                | 25-01-2021 | 35         |
 | [Terraform](https://github.com/benmatselby/technical-workshops/tree/main/terraform)                                            | 01-03-2021 | 43         |
 | [Vulnerability scanning with Trivy](https://github.com/benmatselby/technical-workshops/tree/main/vulverability-scanning-trivy) | 22-02-2021 | 28         |
+| [Docker 101](https://github.com/benmatselby/technical-workshops/tree/main/docker-101)                                          | 15-02-2021 |            |
