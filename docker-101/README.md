@@ -122,9 +122,26 @@ And finally the `.` provides the context to the build command.
 
 ## Running more advanced commands
 
-- Interactive
-- Mounting
-- Sharing environment variables
+For a more indepth review of what you can do whilst running containers, please see the [documentation](https://docs.docker.com/engine/reference/commandline/run/).
+
+An example of sharing environment variables, and files from the host to the container.
+
+```shell
+docker run \
+  --rm \
+  -t \
+  -eGITHUB_ORG \
+  -eGITHUB_TOKEN \
+  -v "${HOME}/.emis":/root/.emis \
+  docker.pkg.github.com/emisgroup/auditor/auditor
+```
+
+Breaking this down.
+
+- `--rm` will remove the container from the system once finished execution.
+- `-t` allocates a `tty`. See [this](https://stackoverflow.com/questions/30137135/confused-about-docker-t-option-to-allocate-a-pseudo-tty).
+- `-e` provides environment variables to the container. If the names match you can do it this way. If not you can provide them in the `-e foo=bar` format.
+- `v` defines a [volume](https://docs.docker.com/engine/reference/commandline/volume_create/), which is essentially a file share between the host and the container. The format is `host:container`.
 
 ## Process management
 
