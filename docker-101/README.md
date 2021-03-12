@@ -68,6 +68,36 @@ If we run `docker ps -a` again you will notice there isn't a new entry in the li
 
 ## Defining
 
+Let's cover two scenarios
+
+1. An environment you want to work in
+2. Shipping something.
+
+### Environment
+
+Let's look at a [Jenkins agent](https://github.com/emisgroup/jenkins-infrastructure/blob/develop/dockerfiles/agent/go-1.16/Dockerfile)
+
+Key items to cover off in the demo
+
+- `FROM` - The base image
+- `USER` - Ability to specify users
+- `ENV` - Environment variables for the image
+- `COPY` - The ability to copy files from the host into the image (These will persist in the image)
+- `RUN` - Running commands to build the image. This is a definition.
+
+### Shipping something
+
+Let's look at the [Hello Production](https://github.com/emisgroup/hello-production/blob/develop/src/server/Dockerfile) example.
+
+Key items to cover off in the demo
+
+- `ARG` - The ability to pass arguments into the image creation process
+- `WORKDIR` - Define what is the working directory of the image, and the container.
+- `alpine` - Base images generally linux based, alpine is a very small linux distribution. If you can use it, it will keep your images small (saves time and money). But uses `apk` not `apt`.
+- `FROM scratch` - Start with a bare bones container, nothing in there.
+- `EXPOSE` - What ports to expose if you are running something port based. Here, Hello runs on port 8080, so we expose that.
+- `CMD` - The entry point for the container when it starts.
+
 ## Building
 
 ## Running more advanced commands
