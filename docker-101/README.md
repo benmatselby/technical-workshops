@@ -100,6 +100,26 @@ Key items to cover off in the demo
 
 ## Building
 
+Let's look at the Hello Production example again.
+
+```shell
+docker build \
+  --build-arg GITHUB_USER=${GITHUB_USER} \
+  --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} \
+  -t hello.azurecr.io:latest \
+  -t 127.0.0.1:32000/hello-production \
+  -t emisgroup/hello-production \
+  -f src/server/Dockerfile .
+```
+
+Breaking this down we have `docker build` as the command. Followed by `--build-arg` which makes use of the `ARG` definition in the `Dockerfile`.
+
+`-t` provides context as to what the image should be tagged as. You can specify multiple tags, and they will all show when you run `docker images`.
+
+`-f` allows you to specify the path to the Dockerfile. Not required if the Dockerfile is in the current working directory.
+
+And finally the `.` provides the context to the build command.
+
 ## Running more advanced commands
 
 - Interactive
@@ -108,11 +128,33 @@ Key items to cover off in the demo
 
 ## Process management
 
-## Cleanup
+Want to know what processes are running?
 
-## Tidbits
+`docker ps` will give the current containers running.
+
+`docker ps -a` will give you all the containers that are running and stopped.
+
+Want to connect to a container that is running, then you can do this:
+
+`docker exec -it [container-id/name] bash`
+
+Breaking this down, we have `docker exec` for executing something, but we run interactively with `-it` options and then run `bash`. This could be `zsh` or actually any command that is available in the container.
+
+To stop a container you can run `docker stop [container-id/name]`.
+
+Want to know more about a running container, then run `docker inspect [container-id/name]`.
+
+## Cleanup
 
 - `docker rm $(docker ps -aq)` - Remove all containers.
 - `docker rmi $(docker images -q)` - Remove all images stored locally.
 - `docker rmi $(docker images -f "dangling=true" -q)` - Remove all images that are not being used - "dangling".
 - `docker stop $(docker ps -aq)` - Stop all containers running.
+
+Or
+
+`docker system prune`
+
+## Tidbits
+
+- Named docker containers are reused if not deleted.
