@@ -1,8 +1,10 @@
 # Docker
 
-**Time allocation:** 30 minutes
+**Time allocation:** 60 minutes
 
-This workshop will be a high level overview of the basic commands you will use for docker daily. It's an entry level workshop, so if you're comfortable with docker on the CLI, this probably isn't for you.
+This workshop will be a high level overview of the basic docker commands you will use daily. It's an entry level workshop, so if you're comfortable with docker on the CLI, this probably isn't for you.
+
+What we will cover:
 
 - [Commands](#commands)
 - [Pulling](#pulling)
@@ -21,7 +23,7 @@ This workshop will use the `hello-world` example from the Docker Hub registry.
 Some up front terminology
 
 - Image - A definition of an environment.
-- Container - A running instantiation of an Image.
+- Container - A virtualised run time environment of a docker image.
 
 ## Commands
 
@@ -42,11 +44,19 @@ Let's start with understanding what images we have on our machine.
 
 `docker images`
 
-This shows us all the images that are pre-built and stored on our machine. Any images listed here are available to be run locally.
+This shows us all the images that are pre-built and stored on your machine. Any images listed here are available to be run locally.
 
-You can either run an image, and if not present, will pull it down. However, we can pull down ahead of time. Let's do that.
+Let's pull down the `hello-world` image.
 
 `docker pull hello-world`
+
+If you now run `docker images` you should see
+
+```shell
+❯ docker images
+REPOSITORY      TAG       IMAGE ID       CREATED        SIZE
+hello-world     latest    d1165f221234   7 days ago     13.3kB
+```
 
 ## Running basic commands
 
@@ -54,9 +64,15 @@ Let's now run that image as a container.
 
 `docker run hello-world`
 
-So `docker` is the main command. `run` is the subcommand which allows us to run the image `hello-world`.
+So `docker` is the main command. `run` is the subcommand which allows us to run the `hello-world` image as a container.
 
-If we now run `docker ps -a` you will see containers that have ran, stopped, and left there.
+If we now run `docker ps -a` you will see containers that are: running, have ran and stopped.
+
+```shell
+❯ docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED              STATUS                          PORTS     NAMES
+1fd4a9f1b80b   hello-world   "/hello"   About a minute ago   Exited (0) About a minute ago             practical_blackwell
+```
 
 Ideally, we want to cleanup after ourselves. So lets run the container again.
 
@@ -75,54 +91,45 @@ Let's cover two scenarios
 
 ### Environment
 
-Let's look at a [Jenkins agent](https://github.com/emisgroup/jenkins-infrastructure/blob/develop/dockerfiles/agent/go-1.16/Dockerfile)
+Let's look at a [VS Code Dev Environment](https://github.com/microsoft/vscode-dev-containers/blob/v0.163.1/containers/go/.devcontainer/base.Dockerfile).
 
-Key items to cover off in the demo
+Key items to cover off are:
 
-- `FROM` - The base image
-- `USER` - Ability to specify users
+- `FROM` - The base image is `golang:1`. These can be chained if required, each adding another layer to the environment.
 - `ENV` - Environment variables for the image
-- `COPY` - The ability to copy files from the host into the image (These will persist in the image)
-- `RUN` - Running commands to build the image. This is a definition.
+- `ARG` - Arguments that can be overridden when building the image.
+- `COPY` - The ability to copy files from the host into the image (These will persist in the image). The host file is on the left, whilst the image location is on the right hand side of the declaration.
+- `RUN` - Running commands to build the image. You can see that commands are grouped together as one `RUN` command. This is to keep those defined as a layer.
 
 ### Shipping something
 
-Let's look at the [Hello Production](https://github.com/emisgroup/hello-production/blob/develop/src/server/Dockerfile) example.
+Let's look at [Hagen](https://github.com/benmatselby/hagen/blob/main/Dockerfile) which is a CLI tool for getting some data out of GitHub. This is running a Go binary inside it.
 
-Key items to cover off in the demo
+Key items to cover off are:
 
-- `ARG` - The ability to pass arguments into the image creation process
 - `WORKDIR` - Define what is the working directory of the image, and the container.
-- `alpine` - Base images generally linux based, alpine is a very small linux distribution. If you can use it, it will keep your images small (saves time and money). But uses `apk` not `apt`.
-- `FROM scratch` - Start with a bare bones container, nothing in there.
-- `EXPOSE` - What ports to expose if you are running something port based. Here, Hello runs on port 8080, so we expose that.
-- `CMD` - The entry point for the container when it starts.
+- `alpine` - Base images are generally linux based. [Alpine](https://www.alpinelinux.org) is a very small linux distribution. If you can use it, it will keep your images small (which ultimately saves time and money). Alpine, by default, uses `apk` not `apt` to install packages.
+- `FROM scratch` - Start with a bare bones container, nothing in there. This is classed as a [multi-stage build](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#use-multi-stage-builds).
+- `ENTRYPOINT` - This defines what should be executed when the image is instantiated as a container. Here you can see we are running the `hagen` command, which has been placed in `/usr/bin/`.
+- `CMD` - Here we using `CMD` to pass `--help` to `hagen`. So if you do not pass any other arguments into the container when running it, it will provide you will a help menu.
 
 ## Building
 
-Let's look at the Hello Production example again.
+Let's look at the Hagen example again.
 
 ```shell
-docker build \
-  --build-arg GITHUB_USER=${GITHUB_USER} \
-  --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} \
-  -t hello.azurecr.io:latest \
-  -t 127.0.0.1:32000/hello-production \
-  -t emisgroup/hello-production \
-  -f src/server/Dockerfile .
+docker build -t benmatselby/hagen .
 ```
 
-Breaking this down we have `docker build` as the command. Followed by `--build-arg` which makes use of the `ARG` definition in the `Dockerfile`.
+Breaking this down we have `docker build` as the command.
 
-`-t` provides context as to what the image should be tagged as. You can specify multiple tags, and they will all show when you run `docker images`.
-
-`-f` allows you to specify the path to the Dockerfile. Not required if the Dockerfile is in the current working directory.
+`-t` defines the string we will tag the image with. You can specify multiple tags, and they will all show when you run `docker images`.
 
 And finally the `.` provides the context to the build command.
 
 ## Running more advanced commands
 
-For a more indepth review of what you can do whilst running containers, please see the [documentation](https://docs.docker.com/engine/reference/commandline/run/).
+For a more in-depth review of what you can do whilst running containers, please see the [documentation](https://docs.docker.com/engine/reference/commandline/run/).
 
 An example of sharing environment variables, and files from the host to the container.
 
@@ -130,10 +137,11 @@ An example of sharing environment variables, and files from the host to the cont
 docker run \
   --rm \
   -t \
+  -eGITHUB_OWNER \
   -eGITHUB_ORG \
   -eGITHUB_TOKEN \
-  -v "${HOME}/.emis":/root/.emis \
-  docker.pkg.github.com/emisgroup/auditor/auditor
+  -v "${HOME}/.benmatselby":/root/.benmatselby \
+  benmatselby/hagen
 ```
 
 Breaking this down.
@@ -141,7 +149,7 @@ Breaking this down.
 - `--rm` will remove the container from the system once finished execution.
 - `-t` allocates a `tty`. See [this](https://stackoverflow.com/questions/30137135/confused-about-docker-t-option-to-allocate-a-pseudo-tty).
 - `-e` provides environment variables to the container. If the names match you can do it this way. If not you can provide them in the `-e foo=bar` format.
-- `v` defines a [volume](https://docs.docker.com/engine/reference/commandline/volume_create/), which is essentially a file share between the host and the container. The format is `host:container`.
+- `v` defines a [volume](https://docs.docker.com/engine/reference/commandline/volume_create/), which is essentially a file share between the host and the container. The format is `host:container`. This allows us to share the configuration used for hagen, with the container.
 
 What if you want to get your terminal back, and run the container unsupervised? Then you can do this
 
@@ -193,3 +201,4 @@ Or
 ## Tidbits
 
 - Named docker containers are reused if not deleted.
+- [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices)
