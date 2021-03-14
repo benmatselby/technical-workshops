@@ -154,14 +154,16 @@ Breaking this down.
 What if you want to get your terminal back, and run the container unsupervised? Then you can do this
 
 ```shell
-echo "hello world" > index.html
-docker run \
+$ echo "hello world" > index.html
+$ docker run \
+  --rm \
   -p 8080:80 \
   -v "$(pwd):/usr/share/nginx/html" \
   -d \
   nginx
-curl http://localhost:8080/
-rm index.html
+dcc55061e1118f7b6ccf2c3708d717531bf0c92327ed42f94f08d13020e901ea
+$ curl http://localhost:8080/
+$ rm index.html
 ```
 
 The extra bits here are:
@@ -179,13 +181,13 @@ Want to know what processes are running?
 
 Want to connect to a container that is running, then you can do this:
 
-`docker exec -it [container-id/name] bash`
+`docker exec -it dcc55061e1118f7b6ccf2c3708d717531bf0c92327ed42f94f08d13020e901ea bash`
 
 Breaking this down, we have `docker exec` for executing something, but we run interactively with `-it` options and then run `bash`. This could be `zsh` or actually any command that is available in the container.
 
-To stop a container you can run `docker stop [container-id/name]`.
+Want to know more about a running container, then run `docker inspect dcc55061e1118f7b6ccf2c3708d717531bf0c92327ed42f94f08d13020e901ea`.
 
-Want to know more about a running container, then run `docker inspect [container-id/name]`.
+To stop a container you can run `docker stop dcc55061e1118f7b6ccf2c3708d717531bf0c92327ed42f94f08d13020e901ea`.
 
 ## Cleanup
 
