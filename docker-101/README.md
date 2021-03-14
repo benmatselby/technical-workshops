@@ -154,19 +154,19 @@ Breaking this down.
 What if you want to get your terminal back, and run the container unsupervised? Then you can do this
 
 ```shell
+echo "hello world" > index.html
 docker run \
-  --rm \
-  -eENV=dev \
-  -eDEPLOYMENT_MECHANISM=Local \
-  -p 8080:8080 \
+  -p 8080:80 \
+  -v "$(pwd):/usr/share/nginx/html" \
   -d \
-  emisgroup/hello-production
-fa92a79b7321e50d21ccfbebc1738bb6ffea2272a20ef5004017382406109aa0
+  nginx
+curl http://localhost:8080/
+rm index.html
 ```
 
 The extra bits here are:
 
-- `-p 8080:8080` links the host port to the container port that has been exposed.
+- `-p 8080:80` links the host port (`8080`) to the container port (`80`) that has been exposed.
 - `-d` will disconnect the container from your terminal, and then output the container id back to you.
 
 ## Process management
