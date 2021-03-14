@@ -156,7 +156,7 @@ What if you want to get your terminal back, and run the container unsupervised? 
 ```shell
 docker run \
   --rm \
-	-eENV=dev \
+  -eENV=dev \
   -eDEPLOYMENT_MECHANISM=Local \
   -p 8080:8080 \
   -d \
@@ -200,5 +200,4 @@ Or
 
 ## Tidbits
 
-- Named docker containers are reused if not deleted.
 - [Dockerfile best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices)
