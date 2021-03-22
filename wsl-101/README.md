@@ -132,6 +132,10 @@ What we will cover:
 
 - Once you have WSL installed, you can use it with VS Code
 - All you need is the [Remote WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+- - We'll add my [dotfiles](https://github.com/paddymorgan84/dotfiles) repo as an example so I can show you what I mean
+    ```bash
+    git clone https://github.com/paddymorgan84/dotfiles.git
+    ```
 - This is where things get fun - From here you can basically develop exclusively within Linux.
 - Don't "halfway house" on the filesystem, work from Linux, not the mounted Windows directories.
 
