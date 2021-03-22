@@ -12,7 +12,7 @@ What we will cover:
 - [Using with VS Code](#using-with-vs-code)
 - [Using with Docker](#using-with-docker)
 - [Using a standalone terminal](#using-a-standalone-terminal)
-- [Getting more out of WSL](#getting-more-out-of-wsl)
+- [Making it your own](#making-it-your-own)
 - [Why I like it](#why-i-like-it)
 - [Tidbits](#tidbits)
 - [References](#references)
@@ -138,6 +138,7 @@ What we will cover:
     ```
 - This is where things get fun - From here you can basically develop exclusively within Linux.
 - Don't "halfway house" on the filesystem, work from Linux, not the mounted Windows directories.
+- Some extensions will prompt you to re-install them in WSL, do it!
 
 ## Using with Docker
 
@@ -183,7 +184,7 @@ CONTAINER ID   IMAGE                                                        COMM
   - Again, a small amount of configuration to get started, `ctrl + ,` for settings
   - Example of settings can be found in my [dotfiles](https://github.com/paddymorgan84/dotfiles/blob/master/windows-terminal/settings.json)
 
-## Getting more out of WSL
+## Making it your own
 
 There's two key things I use to personalise my WSL experience for me.
 
