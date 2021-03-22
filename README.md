@@ -14,3 +14,4 @@ This repo houses content for Technical Workshops.
 | [Terraform](./terraform)                                            | 01-03-2021 | 43         |                            |
 | [Git 101](./git-101)                                                | 08-03-2021 | 50         | [Git 101 notes](./git-101)       |
 | [Docker 101](./docker-101)                                          | 15-03-2021 | 39         | [Docker 101 notes](./docker-101) |
+| [WSL 101](./wsl-101)                                                | 22-03-2021 | 31         | [WSL 101 notes](./wsl-101) |
