@@ -200,6 +200,7 @@ There's two key things I use to personalise my WSL experience for me.
   - etc...
 - You run Ansible playbooks that describe what you want Ansible to do
 - Playbooks should be idempotent.
+- We have a repo for this thanks to inner source: [Janus](https://github.com/emisgroup/janus)
 
 ### Dotfiles
 
