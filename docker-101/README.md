@@ -1,5 +1,7 @@
 # Docker
 
+Cross posted to [dev.to](https://dev.to/benmatselby/docker-knowledge-to-get-you-through-the-day-47bl).
+
 **Time allocation:** 60 minutes
 
 This workshop will be a high level overview of the basic docker commands you will use daily. It's an entry level workshop, so if you're comfortable with docker on the CLI, this probably isn't for you.
