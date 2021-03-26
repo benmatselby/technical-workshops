@@ -13,4 +13,4 @@ jobs:
         uses: benmatselby/gollum-page-watcher-action@v1.5.0
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_CHANNEL: #platform-leadership-tech
+          SLACK_CHANNEL: '#platform-leadership-tech'
