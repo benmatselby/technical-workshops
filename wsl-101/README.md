@@ -1,5 +1,7 @@
 # WSL
 
+Cross posted to [dev.to](https://dev.to/paddymorgan84/getting-started-with-wsl-2-ja)
+
 **Time allocation:** 60 minutes
 
 This workshop will be a high level overview of installing, configuring and using WSL. It's an entry level workshop, so if you're comfortable with WSL and already use it, this probably isn't for you.
