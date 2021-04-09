@@ -16,4 +16,3 @@ This workshop aims to provide an intermediate overview of Jenkins. We will show 
 
 - [Getting started with Jenkins](https://dev.to/benmatselby/getting-started-with-jenkins-3a81)
 - [Getting started with Jenkins: Agents](https://dev.to/benmatselby/getting-started-with-jenkins-agents-5b5e)
-- 
