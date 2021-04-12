@@ -14,5 +14,6 @@ This repo houses content for Technical Workshops.
 - [Docker 101](./docker-101)
 - [WSL 101](./wsl-101)
 - [Setting up a VS Code Dev Container](./vscode-dev-container)
+- [Terraform 101](./terraform-101)
 
 For more information, please visit the [wiki](https://github.com/emisgroup/technical-workshops/wiki).
