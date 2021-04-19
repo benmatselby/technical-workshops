@@ -13,6 +13,7 @@ This repo houses content for Technical Workshops.
 - [Setting up a VS Code Dev Container](./vscode-dev-container)
 - [Terraform 101](./terraform-101)
 - [Terraform](./terraform)
+- [Terratest](https://dev.to/benmatselby/using-terratest-to-test-your-infrastructure-3f9k)
 - [Vulnerability scanning with Trivy](./vulverability-scanning-trivy)
 - [WSL 101](./wsl-101)
 
