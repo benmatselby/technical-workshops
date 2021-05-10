@@ -1,6 +1,6 @@
 # Technical Workshops
 
-This repo houses content for Technical Workshops.
+This repo houses the content from the Technical Workshops Paddy Morgan and Ben Selby ran in half one of 2021.
 
 - [Bash 101](./bash-101)
 - [Contributing to Jenkins](./contributing-to-jenkins)
