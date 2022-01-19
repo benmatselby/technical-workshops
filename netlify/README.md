@@ -7,7 +7,10 @@ This workshop aims to provide an overview of Netlify. We will get you up and run
 We have a rough agenda of:
 
 - Ben: What is Netlify?
+  - [Website](https://www.netlify.com) 
+  - [Tech Radar](https://radar.emisgroup.uk/content/technology/netlify)
 - Ben: What the benefits are.
+  - [White paper that Team Heisenberg created](https://radar.emisgroup.uk/white-papers/netlify.pdf)
 - Ben: The dashboard
 - Ben: The CLI
 - Ben: Logs
