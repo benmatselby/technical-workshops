@@ -1,4 +1,4 @@
-# Jenkins application overview
+# Netlify
 
 **Time allocation:** 45 minutes
 
@@ -6,13 +6,13 @@ This workshop aims to provide an overview of Netlify. We will get you up and run
 
 We have a rough agenda of:
 
-- What is Netlify?
-- What the benefits are.
-- The dashboard
-- Logs
-- The CLI
-- The configuration
-- The deployments
+- Ben: What is Netlify?
+- Ben: What the benefits are.
+- Ben: The dashboard
+- Ben: The CLI
+- Ben: Logs
+- Eleanor: The configuration
+- Eleanor: The deployments
   - Deploy previews.
   - Branch based deployments.
   - Publish a deployment.
