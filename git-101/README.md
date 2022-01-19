@@ -4,6 +4,8 @@ Cross posted to [dev.to](https://dev.to/benmatselby/git-commands-to-get-you-thro
 
 **Time allocation:** 30 minutes
 
+This was last run on 8th March 2021 and 50 people attended.
+
 This workshop will be a high level overview of the basic commands you will use for git daily. It's an entry level workshop, so if you're comfortable with git on the CLI, this probably isn't for you.
 
 - Cloning

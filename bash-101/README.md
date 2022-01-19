@@ -2,6 +2,8 @@
 
 **Time allocation:** 45 minutes
 
+This was last run on 8th February 2021 and 31 people attended.
+
 This workshop will be conducted in the style of a group code review. We will walk you through various bash scripts and explain what the commands do, and why. We will cover any tips and tricks along the way, such as using shellcheck. Bring your questions, and we will do our best to answer on the spot (no pressure!).
 
 ## Notes

@@ -4,6 +4,8 @@ Cross posted to [dev.to](https://dev.to/paddymorgan84/getting-started-with-wsl-2
 
 **Time allocation:** 60 minutes
 
+This was last run on 22nd March 2021 and 31 people attended.
+
 This workshop will be a high level overview of installing, configuring and using WSL. It's an entry level workshop, so if you're comfortable with WSL and already use it, this probably isn't for you.
 
 What we will cover:

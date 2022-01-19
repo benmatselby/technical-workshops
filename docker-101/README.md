@@ -4,6 +4,8 @@ Cross posted to [dev.to](https://dev.to/benmatselby/docker-knowledge-to-get-you-
 
 **Time allocation:** 60 minutes
 
+This was last run on 15th March 2021 and 39 people attended.
+
 This workshop will be a high level overview of the basic docker commands you will use daily. It's an entry level workshop, so if you're comfortable with docker on the CLI, this probably isn't for you.
 
 What we will cover:

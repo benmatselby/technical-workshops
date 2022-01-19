@@ -2,6 +2,8 @@
 
 **Time allocation:** 30 minutes
 
+This was last run on 12th April 2021 and 73 people attended.
+
 This workshop aims to provide a basic overview of Terraform. This is an entry level workshop that goes over what we have learnt from using Terraform in our projects.
 
 We will cover

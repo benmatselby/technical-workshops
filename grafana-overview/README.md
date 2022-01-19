@@ -2,6 +2,8 @@
 
 **Time allocation:** 30 minutes
 
+This was last run on 1st February 2021 and 45 people attended.
+
 This workshops is a whistle stop tour of Grafana. We will show you what we have done, how we have done it, and why. This is aimed at all engineers, as we believe this is useful information.
 
 - Data source explanations.

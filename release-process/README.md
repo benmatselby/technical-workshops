@@ -2,6 +2,8 @@
 
 **Time allocation:** 1 hour
 
+This was last run on 2nd February 2021 and 46 people attended.
+
 This workshop aims to provide a walk through of the release process documented in the Tech Radar. This will use a real product: The jenkins solution. During this session, we aim to produce a release candidate, and deploy it (time permitting). This is aimed at all engineers who are interested in the release process, or are implementing in their products.
 
 - Feature pull request, merged, deployed.
