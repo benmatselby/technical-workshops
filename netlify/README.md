@@ -13,10 +13,10 @@ We have a rough agenda of:
 - The CLI
 - The configuration
 - The deployments
-- Deploy previews.
-- Branch based deployments.
-- Publish a deployment.
-- Back out a deployment.
+  - Deploy previews.
+  - Branch based deployments.
+  - Publish a deployment.
+  - Back out a deployment.
 - Q&A
 
 ## Notes
