@@ -71,6 +71,16 @@ JAMStack is JavaScript, APIs, and Markup.
 
 ### Functions
 
+- Netlify Functions are AWS Lambdas underneath.
+- Easier to onboard, drop a file in a folder (configurable).
+- Write them in TypeScript/JavaScript/Go (as of now).
+- For now, you can only use them for mocks, or other none production transit workloads (legal reasons for EMIS, not the world).
+- Demo (Load up the readme and curl)
+- You can create them from the CLI (nice)
+
 ### Logs
+
+- Functions have logs, and you can view them.
+- Standard stuff (`console.log`) as per 12factor.net
 
 ### Deployments
