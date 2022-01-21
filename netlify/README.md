@@ -13,6 +13,7 @@ We have a rough agenda of:
   - [White paper that Team Heisenberg created](https://radar.emisgroup.uk/white-papers/netlify.pdf)
 - Ben: The dashboard
 - Ben: The CLI
+- Ben: Functions
 - Ben: Logs
 - Eleanor: The configuration
 - Eleanor: The deployments
@@ -56,6 +57,8 @@ JAMStack is JavaScript, APIs, and Markup.
     - We can hook into the URLs we already have, and get Netlify to setup Lets Encrypt certificates for us.
 
 ### CLI
+
+### Functions
 
 ### Logs
 
