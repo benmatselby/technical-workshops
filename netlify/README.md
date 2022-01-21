@@ -58,6 +58,17 @@ JAMStack is JavaScript, APIs, and Markup.
 
 ### CLI
 
+- Netlify provide a CLI, which you can install globally, or in a project.
+- `npm install netlify-cli --save-dev` will save to your project.
+- `npm install -g netlify-cli` will globally install the tool.
+- Once installed, you can use `netlify login` to get you authenticated. (`netlify status` explains who you are.)
+- Pretty much everything you can do in the UI, you can do on the CLI
+  - Run a build `netlify build`
+  - Deploy locally `netlify deploy`
+  - List all the sites `netlify sites`
+- You can run all of the functions and everything locally
+  - `netlify dev` This is really really nice in my opinion.
+
 ### Functions
 
 ### Logs
